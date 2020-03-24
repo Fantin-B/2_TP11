@@ -6,16 +6,26 @@ class Cercle():
         return self.__rayon
 
     def __add__(self, other):
-        return Cercle(self.__rayon + other.getRayon())
+        if isinstance(other,Cercle) == True:
+            return Cercle(self.__rayon + other.getRayon())
+        else:
+            print("Les des objets doivent être une instance de le classe Cercle")
 
     def __lt__(self, other):
-        return self.__rayon < other.getRayon()
+        if isinstance(other,Cercle) == True:
+            return self.__rayon < other.getRayon()
+        else:
+            print("Les des objets doivent être une instance de le classe Cercle")
+
 
     def __gt__(self, other):
-        return self.__rayon > other.getRayon()
+        if isinstance(other,Cercle) == True:
+            return self.__rayon > other.getRayon()
+        else:
+            print("Les des objets doivent être une instance de le classe Cercle")
 
     def __str__(self):
-        print("Le rayon est de", self.getRayon())
+        return  "Le rayon est de " +str(self.getRayon())
 
 
 #test programme
@@ -25,4 +35,4 @@ if __name__== '__main__':
     c3 = c1 + c2
     c4 = c1 < c2
     c5 = c2 > c3
-    print(c5)
+    print(c3)
