@@ -9,27 +9,27 @@ class Cercle():
         if isinstance(other,Cercle) == True:
             return Cercle(self.__rayon + other.getRayon())
         else:
-            print("Les des objets doivent être une instance de le classe Cercle")
+            return "Les des objets doivent être une instance de le classe Cercle"
 
     def __lt__(self, other):
         if isinstance(other,Cercle) == True:
             return self.__rayon < other.getRayon()
         else:
-            print("Les des objets doivent être une instance de le classe Cercle")
+            return "Les des objets doivent être une instance de le classe Cercle"
 
 
     def __gt__(self, other):
         if isinstance(other,Cercle) == True:
             return self.__rayon > other.getRayon()
         else:
-            print("Les des objets doivent être une instance de le classe Cercle")
+            return "Les des objets doivent être une instance de le classe Cercle"
 
     def __str__(self):
         return  "Le rayon est de " +str(self.getRayon())
 
 
 #test programme
-if __name__== '__main__':
+if __name__ == '__main__':
     c1 = Cercle(2)
     c2 = Cercle(3)
     c3 = c1 + c2
