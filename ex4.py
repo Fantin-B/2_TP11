@@ -36,7 +36,23 @@ class Duree():
             return Duree(heure,minute,seconde)
 
 
+    def __sub__(self, other):
+        if isinstance(other,Duree) == True :
+            seconde = self.__seconde - other.__seconde
+            if seconde <= 0 :
+                minute = -1
+                seconde = seconde+60
+            else:
+                minute = 0
+            minute += self.__minute + other.__minute
+            if minute <= 0 :
+                heure = -1
+                minute = minute+60
+            else:
+                heure = 0
+            heure += self.__heure - other.__heure
 
+            return Duree(heure,minute,seconde)
 
 #TestProgramme
 if __name__=='__main__':
@@ -44,4 +60,5 @@ if __name__=='__main__':
     obj2 = Duree(2,19,20)
 
     obj3 = obj1 + obj2
-    print(obj3)
+    obj4 = obj1 - obj2
+    print(obj4)
